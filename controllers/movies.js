@@ -22,29 +22,27 @@ module.exports.createMovie = (req, res, next) => {
     year,
     description,
     image,
-    trailer,
+    trailerLink,
     nameRU,
     nameEN,
     thumbnail,
     movieId,
   } = req.body;
   Movie
-    .create(
-      {
-        country,
-        director,
-        duration,
-        year,
-        description,
-        image,
-        trailer,
-        nameRU,
-        nameEN,
-        thumbnail,
-        movieId,
-        owner: req.user._id,
-      },
-    )
+    .create({
+      country,
+      director,
+      duration,
+      year,
+      description,
+      image,
+      trailerLink,
+      nameRU,
+      nameEN,
+      thumbnail,
+      movieId,
+      owner: req.user._id,
+    })
     .then((movie) => res.status(OK_CREATED_STATUS).send(movie))
     .catch((e) => {
       if (e instanceof mongoose.Error.ValidationError) {
