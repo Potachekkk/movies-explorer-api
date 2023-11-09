@@ -13,6 +13,8 @@ const {
   SECRET_KEY,
 } = require('../config/config');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 module.exports.createUser = (req, res, next) => {
     const {
       email,
