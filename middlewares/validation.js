@@ -18,12 +18,6 @@ const validateCreateUser = celebrate({
   }),
 });
 
-const validateGetUserById = celebrate({
-  params: Joi.object().keys({
-    userId: Joi.string().required().regex(REG_ID),
-  }),
-});
-
 const validateUpdateUser = celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30).required(),
@@ -31,13 +25,7 @@ const validateUpdateUser = celebrate({
   }),
 });
 
-const validateUpdateAvatar = celebrate({
-  body: Joi.object().keys({
-    avatar: Joi.string().required().regex(REG_URL),
-  }),
-});
-
-const validateCreateCard = celebrate({
+const validateCreateMovie = celebrate({
   body: Joi.object().keys({
     name: Joi.string().min(2).max(30).required(),
     link: Joi.string().required().regex(REG_URL),
@@ -53,9 +41,7 @@ const validateId = celebrate({
 module.exports = {
   validateLogin,
   validateCreateUser,
-  validateGetUserById,
   validateUpdateUser,
-  validateUpdateAvatar,
-  validateCreateCard,
+  validateCreateMovie,
   validateId,
 };
