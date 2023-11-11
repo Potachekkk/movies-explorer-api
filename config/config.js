@@ -16,6 +16,8 @@ const SECRET_KEY = 'some-secret-key';
 
 const REG_URL = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_+.~#?&/=]*)$/;
 const REG_ID = /^[0-9a-fA-F]{24}$/;
+const REG_EMAIL = /.+@.+\..+/;
+const REG_PASSWORD = /^(?=.*[A-z])(?=.*\d)(?=.*[!@#$%^&*])(?=.{8,})/;
 
 module.exports = {
   PORT,
@@ -32,4 +34,6 @@ module.exports = {
   SECRET_KEY,
   REG_URL,
   REG_ID,
+  REG_EMAIL,
+  REG_PASSWORD,
 };

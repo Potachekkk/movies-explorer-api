@@ -79,7 +79,7 @@ const updateUser = (req, res, next, newData) => {
     })
     .catch((e) => {
       if (e instanceof mongoose.Error.ValidationError) {
-        next(new BadRequest('Переданы не валидные данные'));
+        next(new BadRequest('Переданы невалидные данные'));
       } else {
         next(e);
       }
