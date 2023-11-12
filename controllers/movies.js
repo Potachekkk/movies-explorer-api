@@ -7,9 +7,9 @@ const BadRequest = require('../errors/badRequest');
 
 const { OK_STATUS, OK_CREATED_STATUS } = require('../config/config');
 
-module.exports.getMovies = (_, res, next) => {
+module.exports.getMovies = (req, res, next) => {
   Movie
-    .find({})
+    .find({ owner: req.user._id })
     .then((movies) => res.status(OK_STATUS).send(movies))
     .catch(next);
 };

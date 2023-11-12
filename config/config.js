@@ -1,6 +1,6 @@
 const { PORT = 3000 } = process.env;
 
-const MONGO_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb';
+const MONGO_URL_DEV = 'mongodb://127.0.0.1:27017/bitfilmsdb';
 
 const OK_STATUS = 200;
 const OK_CREATED_STATUS = 201;
@@ -20,8 +20,9 @@ const REG_EMAIL = /.+@.+\..+/;
 const REG_PASSWORD = /^(?=.*[A-z])(?=.*\d)(?=.*[!@#$%^&*])(?=.{8,})/;
 
 module.exports = {
+  MONGO_URL_DEV,
+  SECRET_KEY,
   PORT,
-  MONGO_URL,
   OK_STATUS,
   OK_CREATED_STATUS,
   BAD_REQUEST_STATUS,
@@ -31,7 +32,6 @@ module.exports = {
   CONFLICT_STATUS,
   INTERNAL_SERVER_STATUS,
   SALT_ROUND,
-  SECRET_KEY,
   REG_URL,
   REG_ID,
   REG_EMAIL,
