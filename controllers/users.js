@@ -17,22 +17,23 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 
 module.exports.createUser = (req, res, next) => {
   const {
+    name,
     email,
     password,
-    name,
   } = req.body;
 
   bcrypt.hash(password, SALT_ROUND)
     .then((hash) => User.create({
+      name,
       email,
       password: hash,
-      name,
     }))
     .then((newUser) => {
       res.status(OK_CREATED_STATUS).send({
         data: {
-          email: newUser.email,
+          _id: newUser.id,
           name: newUser.name,
+          email: newUser.email,
         },
       });
     })

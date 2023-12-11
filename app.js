@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
-// const cors = require('./middlewares/cors');
+const cors = require('./middlewares/cors');
 const { handleError } = require('./middlewares/error-handling');
 const { routes } = require('./routes');
 const { PORT, MONGO_URL_DEV } = require('./config/config');
@@ -15,7 +15,7 @@ const limiter = require('./middlewares/rateLimiter');
 
 const app = express();
 
-// app.use(cors);
+app.use(cors);
 
 app.use(express.json());
 
