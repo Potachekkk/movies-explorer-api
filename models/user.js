@@ -24,6 +24,7 @@ const userSchema = new mongoose.Schema(
       default: 'Влад',
       minlength: [2, 'Имя не может быть короче 2 символов'],
       maxlength: [30, 'Имя не может быть длиннее 30 символов'],
+      required: true,
     },
   },
   {
