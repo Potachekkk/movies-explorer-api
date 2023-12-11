@@ -2,7 +2,7 @@ const allowedCors = [
   'http://api.vladiator.nomoredomainsmonster.ru',
   'http://vladiator.nomoredomainsmonster.ru',
   'https://api.vladiator.nomoredomainsmonster.ru',
-  'http://vladiator.nomoredomainsmonster.ru',
+  'https://vladiator.nomoredomainsmonster.ru',
   'https://localhost:3000',
   'http://localhost:3000',
   'https://localhost:3001',
